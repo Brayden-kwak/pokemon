@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
-import Image from "../assets/cardBg.png";
 import Lottie from 'react-lottie';
 import notFound from '../assets/notFound.json';
 
@@ -30,23 +28,18 @@ const useStyles = makeStyles({
         justifyContent: "space-evenly",
         alignItems: "center",
         flexDirection: "column",
-        background: "linear-gradient(to right bottom, #FFDE00, #D55D27)",
+        background: "linear-gradient(to right bottom, #ffe63f, #e54631)",
         boxSizing: "content-box",
         borderWidth: "4px",
         borderStyle: "solid",
-        borderImage: "linear-gradient(to right top, #FFDE00, #D5A100)",
+        borderImage: "linear-gradient(to right bottom, #ffeb61, #c93825)",
         borderImageSlice: 1,
     },
     textBox: {
-        marginTop: -60
-    }
-});
-
-const subTextTheme = createTheme({
-    typography: {
+        marginTop: -60,
         fontSize: 18,
         fontFamily: 'IndigoRegular'
-    }
+    },
 });
 
 const lottieOptions = {
@@ -65,7 +58,7 @@ function NotFound() {
                 style={{width: 250, height: 250}}
             />
             <Box className={classes.textBox}>
-                <Typography theme={subTextTheme} align="center" color="white">Hm... an unknown <br/> pokemon perhaps?</Typography>
+                <Typography variant="h6" align="center" color="white">Hm... an unknown <br/> pokemon perhaps?</Typography>
             </Box>
         </Card>
     </Box>

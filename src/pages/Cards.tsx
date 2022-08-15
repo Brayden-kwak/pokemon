@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Box, Card, CardMedia, Typography, CardContent } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { GiAbstract047 } from "react-icons/gi";
@@ -30,12 +29,11 @@ const useStyles = makeStyles({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        background: "linear-gradient(to right bottom, #FFDE00, #D55D27)",
-        // background: "linear-gradient(to right bottom, #FFDE00, #EE6B2F)",
+        background: "linear-gradient(to right bottom, #ffe63f, #e54631)",
         boxSizing: "content-box",
         borderWidth: "4px",
         borderStyle: "solid",
-        borderImage: "linear-gradient(to right top, #FFDE00, #D5A100)",
+        borderImage: "linear-gradient(to right bottom, #ffeb61, #c93825)",
         borderImageSlice: 1,
     },
     cardImageContainer: {
@@ -119,31 +117,10 @@ const useStyles = makeStyles({
     },
 });
 
-const titleTextTheme = createTheme({
-    typography: {
-        fontSize: 33,
-        fontFamily: 'IndigoRegular'
-    }
-});
-
-const subTextTheme = createTheme({
-    typography: {
-        fontSize: 12,
-        fontFamily: 'IndigoRegular'
-    }
-});
-
-const categoryTextTheme = createTheme({
-    typography: {
-        fontSize: 11,
-        fontFamily: 'IndigoRegular'
-    }
-});
-
-function Cards({ data }) {
+function Cards({ data }: { data: any}) {
   const classes = useStyles();
 
-  const [index, setIndex] = useState();
+  const [index, setIndex] = useState("");
 
   const quotesData = quotes;
 
@@ -165,27 +142,27 @@ function Cards({ data }) {
         </Box>
         <CardContent className={classes.bottomContainer}>
             <Box className={classes.nameContainer}>
-                <Typography theme={titleTextTheme} color="#fff">{data.name}</Typography>
+                <Typography variant="h4" color="#fff">{data.name}</Typography>
             </Box>
             <Box>
-                <Typography theme={subTextTheme} align="center" className={classes.randomText} color="#fff">{index}</Typography>
+                <Typography variant="body2" align="center" className={classes.randomText} color="#fff">{index}</Typography>
             </Box>
           <CardContent className={classes.bottomSubContainer}>
             <Box className={classes.idBox}>
-              <Typography theme={categoryTextTheme} className={classes.typeName}>{`#${data.id}`}</Typography>
+              <Typography variant="caption" className={classes.typeName}>{`#${data.id}`}</Typography>
             </Box>
             <Box className={classes.hpBox}>
-              <Typography theme={categoryTextTheme} className={classes.typeName}>{`HP.${data.stats[0].base_stat}`}</Typography>
+              <Typography variant="caption" className={classes.typeName}>{`HP.${data.stats[0].base_stat}`}</Typography>
             </Box>
             <Box className={classes.typeNameBox}>
               <GiAbstract047 color="#fff"/>
-              <Typography theme={categoryTextTheme} className={classes.typeName}>
+              <Typography variant="caption" className={classes.typeName}>
                 {data.types[0].type.name}
               </Typography>
             </Box>
             <Box className={classes.weightBox}>
               <GiWeightLiftingUp color="#fff"/>
-              <Typography theme={categoryTextTheme} className={classes.typeName}>
+              <Typography variant="caption" className={classes.typeName}>
                 {data.weight}kg
               </Typography>
             </Box>

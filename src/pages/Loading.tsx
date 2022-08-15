@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Card, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
 import Lottie from 'react-lottie';
 import LoadingAnimation from '../assets/loadingPokemon.json';
 
@@ -29,22 +28,15 @@ const useStyles = makeStyles({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        background: "linear-gradient(to right bottom, #FFDE00, #D55D27)",
+        background: "linear-gradient(to right bottom, #ffe63f, #e54631)",
         boxSizing: "content-box",
         borderWidth: "4px",
         borderStyle: "solid",
-        borderImage: "linear-gradient(to right top, #FFDE00, #D5A100)",
+        borderImage: "linear-gradient(to right bottom, #ffeb61, #c93825)",
         borderImageSlice: 1,
     },
     text: {
         marginTop: 30,
-    }
-});
-
-const textTheme = createTheme({
-    typography: {
-        fontSize: 25,
-        fontFamily: 'IndigoRegular'
     }
 });
 
@@ -64,7 +56,7 @@ function Loading() {
                 style={{width: 250, height: 250}}
             />
             <Box className={classes.text}>
-                <Typography theme={textTheme} color="#fff">Loading ...</Typography>
+                <Typography variant="h4" color="#fff">Loading ...</Typography>
             </Box>
         </Card>
     </Box>

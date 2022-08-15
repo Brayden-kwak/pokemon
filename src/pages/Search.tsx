@@ -53,22 +53,22 @@ const TextFieldColor = styled(TextField)({
 const theme = createTheme({
     palette: {
       background: {
-        default: "#E3350D",
-      },
-      text: {
-        primary: "#000",
+        default: "#E3350D"
       },
     },
+    typography: {
+      fontFamily: 'IndigoRegular'
+    }
   });
 
 function Search() {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState("");
   const [input, setInput] = useState("");
 
   const classes = useStyles();
 
-  const submit = async (e) => {
+  const submit = async (e: any) => {
     e.preventDefault();
     if (input !== "") {
       setLoading(false);
@@ -87,7 +87,7 @@ function Search() {
     setInput("");
   };
 
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     setInput(e.target.value);
   };
 
