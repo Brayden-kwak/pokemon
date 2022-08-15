@@ -58,7 +58,7 @@ function NotFound() {
                 style={{width: 250, height: 250}}
             />
             <Box className={classes.textBox}>
-                <Typography variant="h6" align="center" color="white">Hm... an unknown <br/> pokemon perhaps?</Typography>
+                <Typography variant="h6" align="center" color="white">Hm ... an unknown <br/> pokemon perhaps?</Typography>
             </Box>
         </Card>
     </Box>

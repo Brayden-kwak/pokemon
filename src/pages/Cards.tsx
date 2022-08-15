@@ -142,7 +142,7 @@ function Cards({ data }: { data: any}) {
         </Box>
         <CardContent className={classes.bottomContainer}>
             <Box className={classes.nameContainer}>
-                <Typography variant="h4" color="#fff">{data.name}</Typography>
+                <Typography variant="h4" color="#fff">{data.name.toUpperCase()}</Typography>
             </Box>
             <Box>
                 <Typography variant="body2" align="center" className={classes.randomText} color="#fff">{index}</Typography>

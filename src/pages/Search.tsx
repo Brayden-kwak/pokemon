@@ -70,19 +70,30 @@ function Search() {
 
   const submit = async (e: any) => {
     e.preventDefault();
+    const cancelToken = axios.CancelToken.source();
+  
     if (input !== "") {
       setLoading(false);
+
       try {
         setLoading(true);
         const response = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${input}`
+          `https://pokeapi.co/api/v2/pokemon/${input.toLowerCase()}`, {cancelToken: cancelToken.token}
         );
         setData(response.data);
       } catch (e) {
+        if(axios.isCancel(e)){
+          console.log("cancelled!")
+        }
         console.log(e);
         setData("");
       }
+
       setLoading(false);
+
+      return () => {
+        cancelToken.cancel();
+      };
     }
     setInput("");
   };
